@@ -1,0 +1,11 @@
+services:
+  airflow-mqtt:
+    build: .
+    image: airflow-mqtt:latest
+    container_name: airflow-mqtt
+    ports:
+      - "8080:8080"   # веб-интерфейс Airflow
+      - "1883:1883"   # MQTT-брокер
+    environment:
+      CANDIDATE_SURNAME: "Shaymukhametov"
+    restart: unless-stopped
